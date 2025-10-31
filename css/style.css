@@ -153,7 +153,7 @@ img {
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
     url('/hero-villa.webp') no-repeat center center/cover;
   padding: var(--section-spacing) 0;
-  margin-top: -78px; /* Offset the body padding-top */
+  margin-top: -78px; /* Offset the body padding-top 
 }
 
 .hero-content h1 {
@@ -390,12 +390,12 @@ img {
     linear-gradient(180deg, rgba(0,168,120,.55) 0%, rgba(16,20,24,.95) 100%),
     url('assets/hero-villa-bali.webp') center/cover no-repeat;
 }
-/* Layer depth halus (cahaya & emas lembut) */
+/* Layer depth halus (cahaya & emas lembut) 
 .hero::after{
   content:""; position:absolute; inset:0; pointer-events:none;
   background:
     radial-gradient(circle at 60% 30%, rgba(255,255,255,.08) 0%, transparent 70%),
-    radial-gradient(circle at 10% 90%, rgba(203,175,122,.12) 0%, transparent 80%);
+    radial-gradient(circle at 10% 90%, rgba(203,175,122,.12) 0%, transparent 80%);*/
 }
 .hero .container{ position:relative; z-index:2; max-width:1100px; }
 .hero h1{ font-family:"Playfair Display",serif; font-size:clamp(36px,5vw,62px); line-height:1.12; margin:0 0 14px; text-shadow:0 2px 24px rgba(0,0,0,.4); }
@@ -537,14 +537,13 @@ img {
   color: var(--color-light);
 
   /* Layer 1: foto, Layer 2: gradient */
-  background-image:
-    url('hero-villa.webp'),
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3));
-
-  /* Atur masing-masing layer */
+background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url('hero-villa.webp') no-repeat center center/cover;
+  /* Atur masing-masing layer 
   background-position: center, center;
   background-size: cover, cover;
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat, no-repeat;*/
 
   padding: var(--section-spacing) 0;
   margin-top: -78px; /* offset sticky navbar */
