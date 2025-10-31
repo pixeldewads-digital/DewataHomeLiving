@@ -527,3 +527,25 @@ img {
   background: var(--emerald); color:#fff; display:grid; place-items:center;
   font-weight:700; font-size: .9rem;
 }
+/* Hero khusus HOME */
+.hero.hero--home{
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-light);
+
+  /* Layer 1: foto, Layer 2: gradient */
+  background-image:
+    url('./hero-villa.webp'),
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+
+  /* Atur masing-masing layer */
+  background-position: center, center;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+
+  padding: var(--section-spacing) 0;
+  margin-top: -78px; /* offset sticky navbar */
+}
