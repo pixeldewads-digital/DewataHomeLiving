@@ -116,5 +116,10 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+  const btn=document.querySelector('.hamburger');
+  const links=document.querySelector('.nav-links');
+  if(btn){ btn.addEventListener('click',()=>links.classList.toggle('show')); }
+</script>
 </body>
 </html>
