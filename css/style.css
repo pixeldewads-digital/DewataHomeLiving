@@ -153,7 +153,7 @@ img {
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
     url('/hero-villa.webp') no-repeat center center/cover;
   padding: var(--section-spacing) 0;
-  margin-top: -78px; /* Offset the body padding-top 
+  margin-top: -78px; /* Offset the body padding-top*/ 
 }
 
 .hero-content h1 {
