@@ -1,657 +1,158 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dewata Home Living - Bangun Aset Kost & Villa Eksklusif di Bali</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dewata Home Living - Bangun Aset Kost & Villa Eksklusif di Bali</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-
-    <style>
-        /* ------------------- */
-        /* BRANDING & RESET    */
-        /* ------------------- */
-        :root {
-            --color-primary: #00A878; /* Hijau Jamrud */
-            --color-accent: #CBAF7A;  /* Emas */
-            --color-dark: #101418;    /* Arang */
-            --color-light: #FFFFFF;  /* Putih */
-            --color-bg: #F6F4EF;     /* Beige */
-
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Lato', sans-serif;
-
-            --border-radius: 16px;
-            --section-spacing: 72px;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--color-dark);
-            background-color: var(--color-bg);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            font-weight: 700;
-        }
-
-        h1 { font-size: 3.5rem; line-height: 1.1; }
-        h2 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 24px; }
-        h3 { font-size: 1.5rem; line-height: 1.3; margin-bottom: 16px; }
-
-        p {
-            margin-bottom: 1rem;
-            max-width: 65ch;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--color-primary);
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--color-accent);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        section {
-            padding: var(--section-spacing) 0;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1140px;
-            margin: 0 auto;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: var(--border-radius);
-            font-weight: 700;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--color-primary);
-            color: var(--color-light);
-        }
-
-        .btn-primary:hover {
-            color: var(--color-light);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-strong);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--color-light);
-            border: 2px solid var(--color-light);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--color-light);
-            color: var(--color-dark);
-        }
-
-        /* ------------------- */
-        /* NAVBAR              */
-        /* ------------------- */
-        .navbar {
-            background-color: var(--color-light);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-        }
-
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--color-dark);
-        }
-
-        .logo:hover { color: var(--color-dark); }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--color-dark);
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 4px;
-        }
-
-        .nav-links a.active,
-        .nav-links a:hover {
-            color: var(--color-primary);
-        }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--color-accent);
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            background-color: var(--color-dark);
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* ------------------- */
-        /* HERO SECTION        */
-        /* ------------------- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--color-light);
-            background: linear-gradient(rgba(0, 168, 120, 0.7), rgba(0, 168, 120, 0.5)), url('https://placehold.co/1920x1080/101418/FFFFFF?text=Villa+Tropis+Bali') no-repeat center center/cover;
-            padding: 0;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-content h1 {
-            margin-bottom: 1rem;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* ------------------- */
-        /* ABOUT SECTION       */
-        /* ------------------- */
-        .about { background-color: var(--color-light); }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .about-images img {
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .about-images img:first-child {
-            margin-top: -2rem;
-        }
-
-        .about-images img:last-child {
-            margin-top: 2rem;
-        }
-
-        /* ------------------- */
-        /* WHY US SECTION      */
-        /* ------------------- */
-        .why-us { text-align: center; }
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 40px;
-        }
-
-        .card {
-            background-color: var(--color-light);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            text-align: left;
-        }
-
-        /* ------------------- */
-        /* PACKAGES SECTION    */
-        /* ------------------- */
-        .packages { background-color: var(--color-light); text-align: center; }
-        .package-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-        }
-
-        .package-card p {
-            flex-grow: 1;
-        }
-
-        .package-card .btn {
-            margin-top: 1rem;
-            background-color: var(--color-accent);
-        }
-        .package-card .btn:hover {
-            background-color: #b99d6a;
-        }
-
-        /* ------------------- */
-        /* PORTFOLIO SECTION   */
-        /* ------------------- */
-        .portfolio { text-align: center; }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 40px;
-        }
-        .portfolio-item {
-            position: relative;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        .portfolio-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: var(--color-light);
-            padding: 1.5rem;
-            text-align: left;
-        }
-        .portfolio-overlay h4 {
-            font-family: var(--font-heading);
-            font-size: 1.25rem;
-        }
-        .portfolio .btn {
-            margin-top: 3rem;
-        }
-
-        /* ------------------- */
-        /* CTA BAND SECTION    */
-        /* ------------------- */
-        .cta-band {
-            background-color: var(--color-primary);
-            color: var(--color-light);
-            text-align: center;
-        }
-        .cta-band h2 {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .cta-band p {
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* ------------------- */
-        /* FOOTER              */
-        /* ------------------- */
-        footer {
-            background-color: var(--color-dark);
-            color: var(--color-light);
-            padding: 4rem 0;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .footer-grid h4 {
-            font-family: var(--font-body);
-            font-weight: 700;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            color: var(--color-accent);
-        }
-        .footer-grid p, .footer-grid a {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        .footer-grid a:hover {
-            color: var(--color-light);
-        }
-        .footer-links {
-            list-style: none;
-        }
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-        .copyright {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-
-        /* ------------------- */
-        /* RESPONSIVE          */
-        /* ------------------- */
-        @media (max-width: 992px) {
-            h1 { font-size: 3rem; }
-            h2 { font-size: 2rem; }
-
-            .about-grid { grid-template-columns: 1fr; }
-            .cards-grid { grid-template-columns: 1fr 1fr; }
-            .portfolio-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--color-light);
-                padding: 1rem 0;
-                box-shadow: var(--shadow);
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .nav-links li {
-                text-align: center;
-                padding: 0.5rem 0;
-            }
-            .hamburger {
-                display: block;
-            }
-
-            .cards-grid { grid-template-columns: 1fr; }
-            .portfolio-grid { grid-template-columns: 1fr; }
-
-            .hero { height: auto; padding: var(--section-spacing) 0; }
-            .hero-content { padding: 4rem 0; }
-            h1 { font-size: 2.5rem; }
-
-            .about-images { grid-template-columns: 1fr; }
-            .about-images img:first-child, .about-images img:last-child {
-                margin-top: 0;
-            }
-
-            .footer-grid {
-                text-align: center;
-            }
-        }
-    </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- ======================= -->
+  <!-- NAVBAR -->
+  <!-- ======================= -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">Dewata Home Living</a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="investment.html">Paket Investasi</a></li>
+          <li><a href="services.html">Jasa Konstruksi</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
     <!-- ======================= -->
-    <!-- NAVBAR                  -->
+    <!-- HERO SECTION -->
     <!-- ======================= -->
-    <header class="navbar">
-        <div class="container navbar-container">
-            <a href="index.html" class="logo">Dewata Home Living</a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="investment.html">Paket Investasi</a></li>
-                    <li><a href="services.html">Jasa Konstruksi</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">Tentang</a></li>
-                    <li><a href="contact.html">Kontak</a></li>
-                </ul>
-            </nav>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Bangun Aset Kost & Villa Eksklusif di Bali</h1>
+          <p>Desain 3D • RAB Transparan • Pengawasan Profesional</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/628282569675" target="_blank" class="btn btn-primary">Konsultasi WhatsApp</a>
+            <a href="investment.html" class="btn btn-outline">Lihat Paket Investasi</a>
+          </div>
         </div>
-    </header>
-
-    <main>
-
-        <!-- ======================= -->
-        <!-- HERO SECTION            -->
-        <!-- ======================= -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Bangun Aset Kost & Villa Eksklusif di Bali</h1>
-                    <p>Desain 3D • RAB Transparan • Pengawasan Profesional</p>
-                    <div class="hero-buttons">
-                        <a href="https://wa.me/628282569675" target="_blank" class="btn btn-primary">Konsultasi WhatsApp</a>
-                        <a href="investment.html" class="btn btn-secondary">Lihat Paket Investasi</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======================= -->
-        <!-- TENTANG SECTION         -->
-        <!-- ======================= -->
-        <section class="about">
-            <div class="container about-grid">
-                <div class="about-text">
-                    <h2>Kontraktor & Konsultan Investasi Properti di Bali</h2>
-                    <p>Dewata Home Living adalah partner terpercaya Anda dalam mewujudkan properti impian di Bali. Kami mengedepankan transparansi total pada Rencana Anggaran Biaya (RAB), pengawasan proyek secara profesional, dan pendampingan menyeluruh untuk memastikan investasi Anda memberikan nilai jangka panjang yang optimal.</p>
-                    <a href="https://wa.me/628282569675" target="_blank" class="btn btn-primary">Konsultasi Gratis</a>
-                </div>
-                <div class="about-images">
-                    <img src="https://placehold.co/400x600/00A878/FFFFFF?text=Villa+Modern" alt="Desain villa tropis modern">
-                    <img src="https://placehold.co/400x600/CBAF7A/FFFFFF?text=Konstruksi" alt="Progres konstruksi bangunan">
-                </div>
-            </div>
-        </section>
-
-        <!-- ======================= -->
-        <!-- KENAPA KAMI SECTION     -->
-        <!-- ======================= -->
-        <section class="why-us">
-            <div class="container">
-                <h2>Kenapa Memilih Dewata?</h2>
-                <div class="cards-grid">
-                    <div class="card">
-                        <h3>Transparansi & RAB Jelas</h3>
-                        <p>Kami memberikan rincian anggaran yang detail dan transparan dari awal hingga akhir, tanpa biaya tersembunyi.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Desain Tropis-Modern</h3>
-                        <p>Tim arsitek kami ahli dalam merancang bangunan yang fungsional, estetis, dan selaras dengan nuansa tropis Bali.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Pendampingan Investasi</h3>
-                        <p>Lebih dari sekadar membangun, kami membantu Anda menganalisis potensi ROI dan aspek legalitas properti.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======================= -->
-        <!-- PAKET INVESTASI         -->
-        <!-- ======================= -->
-        <section class="packages">
-            <div class="container">
-                <h2>Paket Investasi Populer</h2>
-                <div class="cards-grid">
-                    <div class="card package-card">
-                        <h3>Kost 8 Kamar</h3>
-                        <p>1 lantai • Estimasi ±4–5 bulan • Termasuk desain 3D, gambar kerja lengkap, dan RAB detail.</p>
-                        <a href="https://wa.me/628282569675?text=Halo,%20saya%20tertarik%20dengan%20paket%20investasi%20Kost%208%20Kamar." target="_blank" class="btn btn-primary">Info Detail via WA</a>
-                    </div>
-                    <div class="card package-card">
-                        <h3>Kost 14 Kamar</h3>
-                        <p>1–2 lantai • Estimasi ±6 bulan • Termasuk RAB detail, pengawasan profesional, dan dokumentasi progres rutin.</p>
-                        <a href="https://wa.me/628282569675?text=Halo,%20saya%20tertarik%20dengan%20paket%20investasi%20Kost%2014%20Kamar." target="_blank" class="btn btn-primary">Info Detail via WA</a>
-                    </div>
-                    <div class="card package-card">
-                        <h3>Kost 20 Kamar</h3>
-                        <p>2 lantai • Estimasi ±7–8 bulan • Termasuk pendampingan legalitas (sewa/leasehold atau hak milik/freehold).</p>
-                        <a href="https://wa.me/628282569675?text=Halo,%20saya%20tertarik%20dengan%20paket%20investasi%20Kost%2020%20Kamar." target="_blank" class="btn btn-primary">Info Detail via WA</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======================= -->
-        <!-- PORTFOLIO SECTION       -->
-        <!-- ======================= -->
-        <section class="portfolio">
-            <div class="container">
-                <h2>Portfolio Terbaru</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="https://placehold.co/600x400/101418/FFFFFF?text=Jimbaran+Project" alt="Proyek Kost 14 Kamar di Jimbaran">
-                        <div class="portfolio-overlay">
-                            <h4>Jimbaran (Kost 14)</h4>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="https://placehold.co/600x400/00A878/FFFFFF?text=Denpasar+Project" alt="Proyek Kost 20 Kamar di Denpasar">
-                        <div class="portfolio-overlay">
-                            <h4>Denpasar (Kost 20)</h4>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="https://placehold.co/600x400/CBAF7A/FFFFFF?text=Canggu+Project" alt="Proyek Villa Tropis di Canggu">
-                        <div class="portfolio-overlay">
-                            <h4>Canggu (Villa Tropis)</h4>
-                        </div>
-                    </div>
-                </div>
-                <a href="portfolio.html" class="btn btn-primary">Lihat Semua Proyek</a>
-            </div>
-        </section>
-
-        <!-- ======================= -->
-        <!-- CTA BAND SECTION        -->
-        <!-- ======================= -->
-        <section class="cta-band">
-            <div class="container">
-                <h2>Siap Bangun Investasi Anda di Bali?</h2>
-                <p>Konsultasi gratis untuk pengecekan lahan, estimasi biaya, dan timeline.</p>
-                <a href="https://wa.me/628282569675" target="_blank" class="btn btn-secondary">Hubungi Kami Sekarang</a>
-            </div>
-        </section>
-
-    </main>
+      </div>
+    </section>
 
     <!-- ======================= -->
-    <!-- FOOTER                  -->
+    <!-- TENTANG SECTION -->
     <!-- ======================= -->
-    <footer>
-        <div class="container footer-grid">
-            <div>
-                <h4>Dewata Home Living</h4>
-                <p>Partner konstruksi dan konsultan investasi properti terpercaya di Bali. Mewujudkan aset berkualitas dengan proses yang transparan.</p>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="investment.html">Paket Investasi</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Kontak</h4>
-                <ul class="footer-links">
-                    <li><a href="mailto:hello@dewatahomeliving.com">hello@dewatahomeliving.com</a></li>
-                    <li><a href="https://wa.me/628282569675" target="_blank">WA: +62 828 256 96 75</a></li>
-                </ul>
-            </div>
+    <section class="section about">
+      <div class="container grid-2">
+        <div>
+          <h2>Kontraktor & Konsultan Investasi Properti di Bali</h2>
+          <p>Dewata Home Living adalah partner terpercaya Anda dalam mewujudkan properti impian di Bali. Kami mengedepankan transparansi total pada Rencana Anggaran Biaya (RAB), pengawasan proyek secara profesional, dan pendampingan menyeluruh untuk memastikan investasi Anda memberikan nilai jangka panjang yang optimal.</p>
+          <a href="https://wa.me/628282569675" target="_blank" class="btn btn-primary">Konsultasi Gratis</a>
         </div>
-        <div class="container">
-            <p class="copyright">&copy; 2024 Dewata Home Living. All rights reserved.</p>
+        <div class="grid-2 images">
+          <img src="https://placehold.co/400x600/00A878/FFFFFF?text=Villa+Modern" alt="Desain villa tropis modern">
+          <img src="https://placehold.co/400x600/CBAF7A/FFFFFF?text=Konstruksi" alt="Progres konstruksi bangunan">
         </div>
-    </footer>
+      </div>
+    </section>
 
+    <!-- ======================= -->
+    <!-- KENAPA KAMI SECTION -->
+    <!-- ======================= -->
+    <section class="section why-us">
+      <div class="container">
+        <h2>Kenapa Memilih Dewata?</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Transparansi & RAB Jelas</h3>
+            <p>Kami memberikan rincian anggaran yang detail dan transparan dari awal hingga akhir, tanpa biaya tersembunyi.</p>
+          </div>
+          <div class="card">
+            <h3>Desain Tropis-Modern</h3>
+            <p>Tim arsitek kami ahli dalam merancang bangunan yang fungsional, estetis, dan selaras dengan nuansa tropis Bali.</p>
+          </div>
+          <div class="card">
+            <h3>Pendampingan Investasi</h3>
+            <p>Lebih dari sekadar membangun, kami membantu Anda menganalisis potensi ROI dan aspek legalitas properti.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        // JavaScript untuk menu hamburger
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const navLinks = document.getElementById('navLinks');
+    <!-- ======================= -->
+    <!-- PORTFOLIO SECTION -->
+    <!-- ======================= -->
+    <section class="section portfolio">
+      <div class="container">
+        <h2>Portfolio Terbaru</h2>
+        <div class="grid-3">
+          <div class="card">Jimbaran (Kost 14)</div>
+          <div class="card">Denpasar (Kost 20)</div>
+          <div class="card">Canggu (Villa Tropis)</div>
+        </div>
+        <a href="portfolio.html" class="btn btn-primary">Lihat Semua Proyek</a>
+      </div>
+    </section>
 
-        hamburgerBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+  </main>
+
+  <!-- ======================= -->
+  <!-- FOOTER -->
+  <!-- ======================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid-4">
+        <div>
+          <h4>Dewata Home Living</h4>
+          <p>Partner konstruksi dan konsultan investasi properti terpercaya di Bali.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="investment.html">Paket Investasi</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontak</h4>
+          <ul>
+            <li><a href="mailto:hello@dewatahomeliving.com">hello@dewatahomeliving.com</a></li>
+            <li><a href="https://wa.me/628282569675" target="_blank">WA: +62 828 256 96 75</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2024 Dewata Home Living. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    hamburgerBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
 </body>
 </html>
