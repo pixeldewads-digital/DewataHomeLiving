@@ -152,18 +152,7 @@ img {
     url('assets/hero-villa-bali.webp') center/cover no-repeat;
 }
 
-.hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-  max-width: 60ch;
-  margin: 0 auto 2.5rem;
-  opacity: 0.9;
-}
-
+.hero h1, .hero p { text-shadow: 0 2px 18px rgba(0,0,0,0.4); }
 .hero-buttons {
   display: flex;
   justify-content: center;
