@@ -150,7 +150,7 @@ img {
   color: var(--color-light);
   background:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-    url('/DewataHomeLiving/hero-villa.webp') no-repeat center center/cover;
+    url('/hero-villa.webp') no-repeat center center/cover;
   padding: var(--section-spacing) 0;
   margin-top: -78px; /* Offset the body padding-top */
 }
@@ -525,10 +525,4 @@ img {
   width: 24px; height: 24px; border-radius: 50%;
   background: var(--emerald); color:#fff; display:grid; place-items:center;
   font-weight:700; font-size: .9rem;
-}
-/* === HERO UNTUK INDEX (HOME) === */
-.hero--home {
-  background:
-    linear-gradient(180deg, rgba(0,168,120,.55) 0%, rgba(16,20,24,.95) 100%),
-    url('hero-villa.webp') center/cover no-repeat;
 }
