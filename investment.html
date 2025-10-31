@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paket Investasi Kost Bali - Dewata Home Living</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -115,6 +115,11 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="script.js"></script>
+    <script>
+  const btn=document.querySelector('.hamburger');
+  const links=document.querySelector('.nav-links');
+  if(btn){ btn.addEventListener('click',()=>links.classList.toggle('show')); }
+</script>
 </body>
 </html>
