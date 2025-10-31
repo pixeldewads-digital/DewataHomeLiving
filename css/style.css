@@ -141,6 +141,12 @@ img {
 .navbar.is-solid .hamburger span{ background:var(--charcoal); }
 
 /* ========== HERO SECTION ========== */
+/* === HERO UNTUK INDEX (HOME) === */
+.hero--home {
+  background:
+    linear-gradient(180deg, rgba(0,168,120,.55) 0%, rgba(16,20,24,.95) 100%),
+    url('hero-villa.webp') center/cover no-repeat;
+}
 .hero{
   min-height: 90vh;
   display: flex;
