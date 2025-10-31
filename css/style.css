@@ -45,7 +45,11 @@ body {
   color: var(--color-dark);
   background-color: var(--color-light);
   line-height: 1.7;
-  padding-top: var(--navbar-height);
+  /* padding-top is removed so hero can go behind navbar */
+}
+
+main {
+    padding-top: var(--navbar-height);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -102,17 +106,31 @@ img {
 
 /* ========== NAVBAR ========== */
 .navbar {
-  background-color: var(--color-light);
+  /* Default glassmorphism state */
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
   padding: 1rem 0;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: var(--shadow-soft);
   height: var(--navbar-height);
   display: flex;
   align-items: center;
+  transition: background-color 0.4s ease-out, -webkit-backdrop-filter 0.4s ease-out, backdrop-filter 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+.navbar-scrolled {
+  /* Scrolled solid state */
+  background-color: var(--color-light);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: var(--shadow-soft);
+  border-bottom: 1px solid transparent;
 }
 
 .navbar-container {
@@ -126,10 +144,19 @@ img {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--color-dark);
+  color: var(--color-light); /* Default color for transparent state */
+  transition: color var(--transition-fast);
+}
+
+.navbar-scrolled .logo {
+  color: var(--color-dark); /* Color for scrolled state */
 }
 
 .logo:hover {
+  color: var(--color-light);
+}
+
+.navbar-scrolled .logo:hover {
   color: var(--color-dark);
 }
 
@@ -140,10 +167,15 @@ img {
 }
 
 .nav-links a {
-  color: var(--color-dark);
+  color: var(--color-light); /* Default color for transparent state */
   font-weight: 700;
   position: relative;
   padding-bottom: 4px;
+  transition: color var(--transition-fast);
+}
+
+.navbar-scrolled .nav-links a {
+    color: var(--color-dark); /* Color for scrolled state */
 }
 
 .nav-links a.active,
@@ -173,8 +205,23 @@ img {
   width: 25px;
   height: 3px;
   margin: 5px auto;
-  background-color: var(--color-dark);
-  transition: all var(--transition-fast);
+  background-color: var(--color-light); /* Default color for transparent state */
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-scrolled .hamburger span {
+    background-color: var(--color-dark); /* Color for scrolled state */
+}
+
+/* Hamburger transition to "X" when menu is open */
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* ========== HERO SECTION ========== */
@@ -376,24 +423,39 @@ img {
 /* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 820px) {
   .nav-links {
-    display: none;
+    display: flex; /* Always flex now for positioning */
     flex-direction: column;
-    position: absolute;
-    top: var(--navbar-height);
-    left: 0;
+    justify-content: center; /* Center links vertically */
+    align-items: center; /* Center links horizontally */
+    position: fixed;
+    top: 0;
+    left: -100%; /* Start off-screen */
     width: 100%;
-    background-color: var(--color-light);
-    padding: 1rem 0;
-    box-shadow: var(--shadow-soft);
+    height: 100vh; /* Full viewport height */
+    background-color: rgba(16, 20, 24, 0.95); /* Dark semi-transparent background */
+    backdrop-filter: blur(5px);
+    padding: 2rem 0;
+    transition: left 0.35s ease-in-out;
+    gap: 1.5rem; /* More spacing between links */
   }
 
   .nav-links.show {
-    display: flex;
+    left: 0; /* Slide in */
   }
 
   .nav-links li {
     text-align: center;
-    padding: 0.5rem 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+      color: var(--color-light);
+      font-size: 1.5rem; /* Larger text for mobile */
+  }
+
+  /* Ensure link colors don't change based on scroll state in mobile menu */
+  .navbar-scrolled .nav-links a {
+      color: var(--color-light);
   }
 
   .hamburger {
