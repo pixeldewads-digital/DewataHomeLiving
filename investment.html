@@ -1,511 +1,135 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paket Investasi Kost Bali - Dewata Home Living</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paket Investasi Kost Bali - Dewata Home Living</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-
-    <style>
-        /* ------------------- */
-        /* BRANDING & RESET    */
-        /* ------------------- */
-        :root {
-            --color-primary: #00A878; /* Hijau Jamrud */
-            --color-accent: #CBAF7A;  /* Emas */
-            --color-dark: #101418;    /* Arang */
-            --color-light: #FFFFFF;  /* Putih */
-            --color-bg: #F6F4EF;     /* Beige */
-
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Lato', sans-serif;
-
-            --border-radius: 16px;
-            --section-spacing: 72px;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--color-dark);
-            background-color: var(--color-light);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            font-weight: 700;
-        }
-
-        h1 { font-size: 3.5rem; line-height: 1.1; }
-        h2 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 24px; }
-        h3 { font-size: 1.5rem; line-height: 1.3; margin-bottom: 16px; }
-
-        p {
-            margin-bottom: 1rem;
-            max-width: 65ch;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--color-primary);
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--color-accent);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        section {
-            padding: var(--section-spacing) 0;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1140px;
-            margin: 0 auto;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: var(--border-radius);
-            font-weight: 700;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--color-primary);
-            color: var(--color-light);
-        }
-
-        .btn-primary:hover {
-            color: var(--color-light);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-strong);
-        }
-
-        .btn-accent {
-            background-color: var(--color-accent);
-            color: var(--color-light);
-        }
-        .btn-accent:hover {
-            background-color: #b99d6a;
-            color: var(--color-light);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--color-light);
-            border: 2px solid var(--color-light);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--color-light);
-            color: var(--color-dark);
-        }
-
-        /* ------------------- */
-        /* NAVBAR              */
-        /* ------------------- */
-        .navbar {
-            background-color: var(--color-light);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-        }
-
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--color-dark);
-        }
-
-        .logo:hover { color: var(--color-dark); }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--color-dark);
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 4px;
-        }
-
-        .nav-links a.active,
-        .nav-links a:hover {
-            color: var(--color-primary);
-        }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--color-accent);
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            background-color: var(--color-dark);
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* ------------------- */
-        /* PAGE HEADER         */
-        /* ------------------- */
-        .page-header {
-            background-color: var(--color-bg);
-            padding-top: var(--section-spacing);
-            padding-bottom: var(--section-spacing);
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .page-header p {
-            font-size: 1.1rem;
-            max-width: 60ch;
-            margin: 0 auto;
-        }
-
-        /* ------------------- */
-        /* CARDS & LISTS       */
-        /* ------------------- */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 40px;
-        }
-
-        .card {
-            background-color: var(--color-light);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card p {
-            flex-grow: 1;
-        }
-
-        .card .btn {
-            margin-top: 1rem;
-        }
-
-        .workflow-list {
-            list-style: none;
-            counter-reset: workflow-counter;
-            margin: 40px auto 0;
-            max-width: 500px;
-        }
-
-        .workflow-list li {
-            counter-increment: workflow-counter;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-left: 50px;
-            font-size: 1.1rem;
-        }
-
-        .workflow-list li::before {
-            content: counter(workflow-counter);
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 35px;
-            height: 35px;
-            background-color: var(--color-accent);
-            color: var(--color-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-        }
-
-        /* ------------------- */
-        /* CTA BAND SECTION    */
-        /* ------------------- */
-        .cta-band {
-            background-color: var(--color-primary);
-            color: var(--color-light);
-            text-align: center;
-        }
-        .cta-band h2 {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* ------------------- */
-        /* FOOTER              */
-        /* ------------------- */
-        footer {
-            background-color: var(--color-dark);
-            color: var(--color-light);
-            padding: 4rem 0;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .footer-grid h4 {
-            font-family: var(--font-body);
-            font-weight: 700;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            color: var(--color-accent);
-        }
-        .footer-grid p, .footer-grid a {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        .footer-grid a:hover {
-            color: var(--color-light);
-        }
-        .footer-links {
-            list-style: none;
-        }
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-        .copyright {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-
-        /* ------------------- */
-        /* RESPONSIVE          */
-        /* ------------------- */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--color-light);
-                padding: 1rem 0;
-                box-shadow: var(--shadow);
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .nav-links li {
-                text-align: center;
-                padding: 0.5rem 0;
-            }
-            .hamburger {
-                display: block;
-            }
-
-            h1 { font-size: 2.5rem; }
-            .page-header h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.8rem; }
-
-            .footer-grid {
-                text-align: center;
-            }
-        }
-    </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- ======================= -->
+  <!-- NAVBAR -->
+  <!-- ======================= -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">Dewata Home Living</a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="investment.html" class="active">Paket Investasi</a></li>
+          <li><a href="services.html">Jasa Konstruksi</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
     <!-- ======================= -->
-    <!-- NAVBAR                  -->
+    <!-- HEADER -->
     <!-- ======================= -->
-    <header class="navbar">
-        <div class="container navbar-container">
-            <a href="index.html" class="logo">Dewata Home Living</a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="investment.html" class="active">Paket Investasi</a></li>
-                    <li><a href="services.html">Jasa Konstruksi</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">Tentang</a></li>
-                    <li><a href="contact.html">Kontak</a></li>
-                </ul>
-            </nav>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+    <header class="section section-header">
+      <div class="container text-center">
+        <h1>Paket Investasi Kost Bali</h1>
+        <p>Paket termasuk desain 3D, gambar kerja, RAB transparan, dan pengawasan konstruksi.</p>
+      </div>
     </header>
 
-    <main>
-
-        <!-- ======================= -->
-        <!-- HEADER                  -->
-        <!-- ======================= -->
-        <header class="page-header">
-            <div class="container">
-                <h1>Paket Investasi Kost Bali</h1>
-                <p>Paket termasuk desain 3D, gambar kerja, RAB transparan, dan pengawasan konstruksi.</p>
-            </div>
-        </header>
-
-        <!-- ======================= -->
-        <!-- PAKET INVESTASI         -->
-        <!-- ======================= -->
-        <section class="packages">
-            <div class="container">
-                <div class="cards-grid">
-                    <div class="card">
-                        <h3>Kost 8 Kamar</h3>
-                        <p>1 lantai • ±4–5 bulan • Desain 3D + gambar kerja + RAB.</p>
-                        <a href="https://wa.me/628282569675?text=Minta%20simulasi%20RAB%208%20kamar" target="_blank" class="btn btn-accent">Minta Simulasi RAB</a>
-                    </div>
-                    <div class="card">
-                        <h3>Kost 14 Kamar</h3>
-                        <p>1–2 lantai • ±6 bulan • RAB detail, pengawasan & dokumentasi.</p>
-                        <a href="https://wa.me/628282569675?text=Minta%20simulasi%20RAB%2014%20kamar" target="_blank" class="btn btn-accent">Minta Simulasi RAB</a>
-                    </div>
-                    <div class="card">
-                        <h3>Kost 20 Kamar</h3>
-                        <p>2 lantai • ±7–8 bulan • Pendampingan legal lease/free.</p>
-                        <a href="https://wa.me/628282569675?text=Minta%20simulasi%20RAB%2020%20kamar" target="_blank" class="btn btn-accent">Minta Simulasi RAB</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======================= -->
-        <!-- ALUR KERJA              -->
-        <!-- ======================= -->
-        <section class="workflow" style="background-color: var(--color-bg);">
-            <div class="container text-center">
-                <h2>Alur Kerja Kami</h2>
-                <ol class="workflow-list">
-                    <li>Konsultasi & studi lokasi</li>
-                    <li>Desain 3D & RAB final</li>
-                    <li>Kontrak & pengadaan material</li>
-                    <li>Konstruksi & pengawasan</li>
-                    <li>Serah terima</li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- ======================= -->
-        <!-- CTA BAND SECTION        -->
-        <!-- ======================= -->
-        <section class="cta-band">
-            <div class="container">
-                <h2>Siap mulai investasi kost di Bali?</h2>
-                <a href="https://wa.me/628282569675" target="_blank" class="btn btn-secondary">Konsultasi Gratis via WhatsApp</a>
-            </div>
-        </section>
-
-    </main>
+    <!-- ======================= -->
+    <!-- PAKET INVESTASI -->
+    <!-- ======================= -->
+    <section class="section investment-packages">
+      <div class="container">
+        <div class="grid-3">
+          <div class="card">
+            <h3>Kost 8 Kamar</h3>
+            <p>1 lantai • ±4–5 bulan • Desain 3D + gambar kerja + RAB.</p>
+            <a href="https://wa.me/628282569675?text=Minta%20simulasi%20RAB%208%20kamar" target="_blank" class="btn btn-secondary">Minta Simulasi RAB</a>
+          </div>
+          <div class="card">
+            <h3>Kost 14 Kamar</h3>
+            <p>1–2 lantai • ±6 bulan • RAB detail, pengawasan & dokumentasi.</p>
+            <a href="https://wa.me/628282569675?text=Minta%20simulasi%20RAB%2014%20kamar" target="_blank" class="btn btn-secondary">Minta Simulasi RAB</a>
+          </div>
+          <div class="card">
+            <h3>Kost 20 Kamar</h3>
+            <p>2 lantai • ±7–8 bulan • Pendampingan legal lease/free.</p>
+            <a href="https://wa.me/628282569675?text=Minta%20simulasi%20RAB%2020%20kamar" target="_blank" class="btn btn-secondary">Minta Simulasi RAB</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ======================= -->
-    <!-- FOOTER                  -->
+    <!-- ALUR KERJA -->
     <!-- ======================= -->
-    <footer>
-        <div class="container footer-grid">
-            <div>
-                <h4>Dewata Home Living</h4>
-                <p>Partner konstruksi dan konsultan investasi properti terpercaya di Bali. Mewujudkan aset berkualitas dengan proses yang transparan.</p>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="investment.html">Paket Investasi</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Kontak</h4>
-                <ul class="footer-links">
-                    <li><a href="mailto:hello@dewatahomeliving.com">hello@dewatahomeliving.com</a></li>
-                    <li><a href="https://wa.me/628282569675" target="_blank">WA: +62 828 256 96 75</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="container">
-            <p class="copyright">&copy; 2024 Dewata Home Living. All rights reserved.</p>
-        </div>
-    </footer>
+    <section class="section workflow">
+      <div class="container text-center">
+        <h2>Alur Kerja Kami</h2>
+        <ol class="workflow-list">
+          <li>Konsultasi & studi lokasi</li>
+          <li>Desain 3D & RAB final</li>
+          <li>Kontrak & pengadaan material</li>
+          <li>Konstruksi & pengawasan</li>
+          <li>Serah terima</li>
+        </ol>
+      </div>
+    </section>
 
-    <script>
-        // JavaScript untuk menu hamburger
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const navLinks = document.getElementById('navLinks');
+  </main>
 
-        hamburgerBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+  <!-- ======================= -->
+  <!-- FOOTER -->
+  <!-- ======================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid-4">
+        <div>
+          <h4>Dewata Home Living</h4>
+          <p>Partner konstruksi dan konsultan investasi properti terpercaya di Bali.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="investment.html">Paket Investasi</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontak</h4>
+          <ul>
+            <li><a href="mailto:hello@dewatahomeliving.com">hello@dewatahomeliving.com</a></li>
+            <li><a href="https://wa.me/628282569675" target="_blank">WA: +62 828 256 96 75</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2024 Dewata Home Living. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    hamburgerBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
