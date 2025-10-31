@@ -1,32 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // --- Hamburger Menu ---
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const navLinks = document.getElementById('navLinks');
+// js/main.js
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".navbar");
+  const btn = document.querySelector(".hamburger");
+  const links = document.querySelector(".nav-links");
+  const hero = document.querySelector(".hero");
+  const reveals = document.querySelectorAll(".fade-in");
 
-    if (hamburgerBtn && navLinks) {
-        hamburgerBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-            hamburgerBtn.classList.toggle('is-active');
-        });
+  // 1) Navbar: transparan -> solid
+  const onScrollNav = () => {
+    if (window.scrollY > 80) header.classList.add("is-solid");
+    else header.classList.remove("is-solid");
+  };
+  window.addEventListener("scroll", onScrollNav);
+  onScrollNav();
+
+  // 2) Reveal on scroll (IntersectionObserver)
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => io.observe(el));
+
+  // 3) Parallax hero (backgroundPositionY)
+  let ticking = false;
+  const parallax = () => {
+    if (!hero) return;
+    const speed = 0.2; // semakin kecil, semakin halus
+    const y = window.scrollY * speed;
+    hero.style.backgroundPosition = `center calc(50% + ${y}px)`;
+  };
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        parallax();
+        ticking = false;
+      });
+      ticking = true;
     }
+  });
+  parallax(); // initial
 
-    // --- Navbar Scroll Effect ---
-    const navbar = document.querySelector('.navbar');
-
-    if (navbar) {
-        const scrollThreshold = 50; // Pixels to scroll before changing navbar style
-
-        const handleScroll = () => {
-            if (window.scrollY > scrollThreshold) {
-                navbar.classList.add('is-solid');
-            } else {
-                navbar.classList.remove('is-solid');
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        // Initial check in case the page is loaded below the threshold
-        handleScroll();
-    }
+  // 4) Mobile menu
+  btn?.addEventListener("click", () => links.classList.toggle("show"));
 });
