@@ -142,14 +142,17 @@ img {
 
 /* ========== HERO SECTION ========== */
 .hero {
-  position: relative;
-  min-height: 88vh;
-  display: grid;
+  min-height: 90vh;
+  display: flex;
   align-items: center;
-  color: #fff;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-light);
   background:
-    linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 80%),
-    url('assets/hero-villa-bali.webp') center/cover no-repeat;
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url('/assets/hero-villa-bali-warm.webp') no-repeat center center/cover;
+  padding: var(--section-spacing) 0;
+  margin-top: -78px; /* Offset the body padding-top */
 }
 
 .hero-content h1 {
