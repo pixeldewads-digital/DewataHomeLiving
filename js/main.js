@@ -10,6 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    document.addEventListener("DOMContentLoaded", ()=>{
+  const header = document.querySelector(".navbar");
+  const btn = document.querySelector(".hamburger");
+  const links = document.querySelector(".nav-links");
+
+  const onScroll = ()=>{
+    if(window.scrollY > 80){ header.classList.add("is-solid"); }
+    else{ header.classList.remove("is-solid"); }
+  };
+  window.addEventListener("scroll", onScroll);
+  onScroll();
+
+  btn?.addEventListener("click", ()=> links.classList.toggle("show"));
+});
+
     // --- Navbar Scroll Effect ---
     const navbar = document.querySelector('.navbar');
 
