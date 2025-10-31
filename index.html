@@ -11,7 +11,12 @@
     <header class="navbar">
         <div class="container navbar-container">
             <a href="index.html" class="logo">Dewata Home Living</a>
-            <nav>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links-container">
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="investment.html">Paket Investasi</a></li>
@@ -21,24 +26,17 @@
                     <li><a href="contact.html">Kontak</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Bangun Aset Kost & Villa Eksklusif di Bali</h1>
-                    <p>Desain 3D • RAB Transparan • Pengawasan Profesional</p>
-                    <div class="hero-buttons">
-                        <a href="https://wa.me/628282569675" target="_blank" class="btn btn-primary">Konsultasi WhatsApp</a>
-                        <a href="investment.html" class="btn btn-outline">Lihat Paket Investasi</a>
-                    </div>
+            <div class="hero-content container">
+                <h1>Bangun Aset Kost & Villa Eksklusif di Bali</h1>
+                <p>Desain 3D • RAB Transparan • Pengawasan Profesional</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/628282569675" target="_blank" class="btn btn-primary">Konsultasi WhatsApp</a>
+                    <a href="investment.html" class="btn btn-outline">Lihat Paket Investasi</a>
                 </div>
             </div>
         </section>
@@ -50,8 +48,8 @@
                     <p>Dewata Home Living adalah partner terpercaya Anda dalam mewujudkan properti impian di Bali. Kami mengedepankan transparansi total pada Rencana Anggaran Biaya (RAB), pengawasan proyek secara profesional, dan pendampingan menyeluruh untuk memastikan investasi Anda memberikan nilai jangka panjang yang optimal.</p>
                     <a href="https://wa.me/628282569675" target="_blank" class="btn btn-primary">Konsultasi Gratis</a>
                 </div>
-                <div class="grid-2">
-                    <img src="https://placehold.co/400x600/00A878/FFFFFF?text=Villa+Modern" alt="Desain villa tropis modern" class="card">
+                <div class="about-images">
+                     <img src="https://placehold.co/400x600/00A878/FFFFFF?text=Villa+Modern" alt="Desain villa tropis modern" class="card">
                     <img src="https://placehold.co/400x600/CBAF7A/FFFFFF?text=Konstruksi" alt="Progres konstruksi bangunan" class="card mt-2">
                 </div>
             </div>
@@ -77,43 +75,52 @@
             </div>
         </section>
 
-        <section class="section bg-light">
+        <section class="section">
             <div class="container text-center">
                 <h2>Paket Investasi Populer</h2>
                 <div class="grid-3 mt-4 text-left">
-                    <div class="card">
+                     <div class="card package-card">
                         <h3>Kost 8 Kamar</h3>
-                        <p>1 lantai • ±4–5 bulan • Desain 3D + gambar kerja + RAB.</p>
-                        <a href="https://wa.me/628282569675?text=Info%20paket%20kost%208%20kamar" target="_blank" class="btn btn-secondary mt-1">Info Detail</a>
+                        <p>1 lantai • Estimasi ±4–5 bulan • Termasuk desain 3D, gambar kerja lengkap, dan RAB detail.</p>
+                        <a href="https://wa.me/628282569675?text=Halo,%20saya%20tertarik%20dengan%20paket%20investasi%20Kost%208%20Kamar." target="_blank" class="btn btn-secondary mt-1">Info Detail via WA</a>
                     </div>
-                    <div class="card">
+                    <div class="card package-card">
                         <h3>Kost 14 Kamar</h3>
-                        <p>1–2 lantai • ±6 bulan • RAB detail, pengawasan & dokumentasi.</p>
-                        <a href="https://wa.me/628282569675?text=Info%20paket%20kost%2014%20kamar" target="_blank" class="btn btn-secondary mt-1">Info Detail</a>
+                        <p>1–2 lantai • Estimasi ±6 bulan • Termasuk RAB detail, pengawasan profesional, dan dokumentasi progres rutin.</p>
+                        <a href="https://wa.me/628282569675?text=Halo,%20saya%20tertarik%20dengan%20paket%20investasi%20Kost%2014%20Kamar." target="_blank" class="btn btn-secondary mt-1">Info Detail via WA</a>
                     </div>
-                    <div class="card">
+                    <div class="card package-card">
                         <h3>Kost 20 Kamar</h3>
-                        <p>2 lantai • ±7–8 bulan • Pendampingan legal lease/free.</p>
-                        <a href="https://wa.me/628282569675?text=Info%20paket%20kost%2020%20kamar" target="_blank" class="btn btn-secondary mt-1">Info Detail</a>
+                        <p>2 lantai • Estimasi ±7–8 bulan • Termasuk pendampingan legalitas (sewa/leasehold atau hak milik/freehold).</p>
+                        <a href="https://wa.me/628282569675?text=Halo,%20saya%20tertarik%20dengan%20paket%20investasi%20Kost%2020%20Kamar." target="_blank" class="btn btn-secondary mt-1">Info Detail via WA</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section text-center">
-            <div class="container">
+        <section class="section bg-light">
+            <div class="container text-center">
                 <h2>Portfolio Terbaru</h2>
-                <div class="grid-3 mt-4">
-                    <div class="card">Jimbaran (Kost 14)</div>
-                    <div class="card">Denpasar (Kost 20)</div>
-                    <div class="card">Canggu (Villa Tropis)</div>
+                 <div class="portfolio-grid mt-4">
+                    <div class="portfolio-item">
+                        <img src="https://placehold.co/600x400/101418/FFFFFF?text=Jimbaran+Project" alt="Proyek Kost 14 Kamar di Jimbaran">
+                        <div class="portfolio-overlay"><h4>Jimbaran (Kost 14)</h4></div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="https://placehold.co/600x400/00A878/FFFFFF?text=Denpasar+Project" alt="Proyek Kost 20 Kamar di Denpasar">
+                        <div class="portfolio-overlay"><h4>Denpasar (Kost 20)</h4></div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="https://placehold.co/600x400/CBAF7A/FFFFFF?text=Canggu+Project" alt="Proyek Villa Tropis di Canggu">
+                        <div class="portfolio-overlay"><h4>Canggu (Villa Tropis)</h4></div>
+                    </div>
                 </div>
                 <a href="portfolio.html" class="btn btn-primary mt-3">Lihat Semua Proyek</a>
             </div>
         </section>
 
-        <section class="section">
-            <div class="container text-center cta-band">
+        <section class="section cta-band">
+            <div class="container text-center">
                 <h2>Siap Bangun Investasi Anda di Bali?</h2>
                 <p class="text-lead">Konsultasi gratis untuk pengecekan lahan, estimasi biaya, dan timeline.</p>
                 <a href="https://wa.me/628282569675" target="_blank" class="btn btn-primary mt-2">Hubungi Kami Sekarang</a>
@@ -126,26 +133,27 @@
             <div class="grid-4">
                 <div>
                     <h4>Dewata Home Living</h4>
-                    <p>Partner konstruksi dan konsultan investasi properti terpercaya di Bali.</p>
+                    <p>Partner konstruksi dan konsultan investasi properti terpercaya di Bali. Mewujudkan aset berkualitas dengan proses yang transparan.</p>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="investment.html">Paket Investasi</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Kontak</h4>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="mailto:hello@dewatahomeliving.com">hello@dewatahomeliving.com</a></li>
                         <li><a href="https://wa.me/628282569675" target="_blank">WA: +62 828 256 96 75</a></li>
                     </ul>
                 </div>
                  <div>
                     <h4>Legal</h4>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
