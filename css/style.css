@@ -527,7 +527,7 @@ img {
   background: var(--emerald); color:#fff; display:grid; place-items:center;
   font-weight:700; font-size: .9rem;
 }
-/* Hero khusus HOME */
+/* === HERO UNTUK HOME (fix path + spesifik selector) === */
 .hero.hero--home{
   min-height: 90vh;
   display: flex;
@@ -536,14 +536,13 @@ img {
   text-align: center;
   color: var(--color-light);
 
-  /* Layer 1: foto, Layer 2: gradient */
-background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-    url('hero-villa.webp') no-repeat center center/cover;
-  /* Atur masing-masing layer 
+  /* Layer 1 (atas): gradient, Layer 2 (bawah): foto */
+  background-image:
+    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.3)),
+    url('../hero-villa.webp');
   background-position: center, center;
   background-size: cover, cover;
-  background-repeat: no-repeat, no-repeat;*/
+  background-repeat: no-repeat, no-repeat;
 
   padding: var(--section-spacing) 0;
   margin-top: -78px; /* offset sticky navbar */
