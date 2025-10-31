@@ -109,8 +109,8 @@ img {
   position:fixed; top:0; left:0; right:0; z-index:999;
   display:flex; align-items:center; justify-content:center;
   padding:16px 0; transition:all .35s ease;
-  background:rgba(16,20,24,0.05);
-  backdrop-filter: blur(12px) saturate(160%);
+   background: transparent;
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   box-shadow:none;
 }
@@ -528,22 +528,24 @@ img {
   font-weight:700; font-size: .9rem;
 }
 /* === HERO UNTUK HOME (fix path + spesifik selector) === */
-.hero.hero--home{
+.hero.hero--home {
   min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--color-light);
-
-  /* Layer 1 (atas): gradient, Layer 2 (bawah): foto */
-  background-image:
-    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.3)),
-    url('../hero-villa.webp');
-  background-position: center, center;
-  background-size: cover, cover;
-  background-repeat: no-repeat, no-repeat;
-
+  
+  /* Hapus gradient, biarkan warna langit dari foto tampil natural */
+  background-image: url('../hero-villa.webp');
+  background-position: center top; /* fokus langit di atas */
+  background-size: cover;
+  background-repeat: no-repeat;
+  
   padding: var(--section-spacing) 0;
   margin-top: -78px; /* offset sticky navbar */
+}
+.hero.hero--home h1,
+.hero.hero--home p {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
 }
