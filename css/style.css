@@ -150,22 +150,28 @@ img {
   color: var(--color-light);
   background:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-    url('/assets/hero-villa.png') no-repeat center center/cover;
+    url('/assets/hero-villa-bali.webp') no-repeat center center/cover;
   padding: var(--section-spacing) 0;
   margin-top: -78px; /* Offset the body padding-top */
 }
 
-.hero h1, .hero p { text-shadow: 0 2px 18px rgba(0,0,0,0.4); }
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  max-width: 60ch;
+  margin: 0 auto 2.5rem;
+  opacity: 0.9;
+}
+
 .hero-buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-}
-
-.hero::after {
-  content:""; position:absolute; inset:0;
-  background:radial-gradient(circle at 60% 40%, rgba(255,255,255,0.05), transparent 70%);
 }
 
 /* ========== GENERAL SECTIONS & LAYOUT ========== */
