@@ -438,6 +438,18 @@ img {
   gap: 1rem;
   margin-top: 1rem;
 }
+.contact-form-box {
+  background: var(--sand);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  animation: fadeInForm 1s ease;
+}
+
+@keyframes fadeInForm {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 .form-group {
   display: flex;
