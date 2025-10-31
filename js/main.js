@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const handleScroll = () => {
             if (window.scrollY > scrollThreshold) {
-                navbar.classList.add('navbar-scrolled');
+                navbar.classList.add('is-solid');
             } else {
-                navbar.classList.remove('navbar-scrolled');
+                navbar.classList.remove('is-solid');
             }
         };
 
