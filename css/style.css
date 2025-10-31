@@ -141,7 +141,7 @@ img {
 .navbar.is-solid .hamburger span{ background:var(--charcoal); }
 
 /* ========== HERO SECTION ========== */
-.hero--home{
+.hero{
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -525,4 +525,10 @@ img {
   width: 24px; height: 24px; border-radius: 50%;
   background: var(--emerald); color:#fff; display:grid; place-items:center;
   font-weight:700; font-size: .9rem;
+}
+/* === HERO UNTUK INDEX (HOME) === */
+.hero--home {
+  background:
+    linear-gradient(180deg, rgba(0,168,120,.55) 0%, rgba(16,20,24,.95) 100%),
+    url('hero-villa.webp') center/cover no-repeat;
 }
