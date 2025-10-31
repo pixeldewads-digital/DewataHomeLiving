@@ -141,7 +141,7 @@ img {
 .navbar.is-solid .hamburger span{ background:var(--charcoal); }
 
 /* ========== HERO SECTION ========== */
-.hero {
+.hero--home{
   min-height: 90vh;
   display: flex;
   align-items: center;
