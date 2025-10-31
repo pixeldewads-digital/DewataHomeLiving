@@ -142,7 +142,7 @@ img {
 
 /* ========== HERO SECTION ========== */
 
-.hero--home{
+/*.hero--home{
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -384,7 +384,7 @@ img {
 .navbar.is-solid .hamburger span{ background:var(--charcoal); }
 
 /* ========== HERO: kombinasi foto + gradasi + depth abstrak ========== */
-.hero{
+/*.hero{
   position:relative; min-height:88vh; display:grid; align-items:center; color:#fff; overflow:hidden;
   background:
     linear-gradient(180deg, rgba(0,168,120,.55) 0%, rgba(16,20,24,.95) 100%),
@@ -404,7 +404,7 @@ img {
 @media (max-width:840px){ .hero{ text-align:center; } .hero-buttons{ justify-content:center; } }
 
 /* ========== PARALLAX HALUS (CSS fallback) ========== */
-.hero{ background-attachment: scroll; } /* JS akan override posisi background */
+/*.hero{ background-attachment: scroll; } /* JS akan override posisi background */
 
 /* ========== REVEAL ON SCROLL (fade-in) ========== */
 .fade-in{ opacity:0; transform:translateY(40px); transition:opacity .8s ease, transform .8s ease; will-change: transform, opacity; }
@@ -538,7 +538,7 @@ img {
 
   /* Layer 1: foto, Layer 2: gradient */
   background-image:
-    url('./hero-villa.webp'),
+    url('hero-villa.webp'),
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3));
 
   /* Atur masing-masing layer */
